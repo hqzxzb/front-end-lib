@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Log</title>
+</head>
+
+<body>
+    <script src="lib/log.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        function testLog() {
+            log.fatal("fatal log");
+            log.error("error log");
+            log.warn("warn log");
+            log.info("info log");
+            log.debug("debug log");
+            log.trace("trace log");
+        }
+
+        testLog();
+    </script>
+</body>
+
+</html>
