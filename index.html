@@ -7,17 +7,33 @@
 </head>
 
 <body>
-    <script src="lib/log.js" charset="utf-8"></script>
+    <script src="lib/date.js" charset="utf-8"></script>
+	<script src="lib/log.js" charset="utf-8"></script>
     <script type="text/javascript">
-        function testLog() {
-            log.fatal("fatal log");
-            log.error("error log");
-            log.warn("warn log");
-            log.info("info log");
-            log.debug("debug log");
-            log.trace("trace log");
+        function testDate() {
+            var start = new Date();
+            for (var i = 0; i < 100; i++) {
+                new Date().format("yyyy-MM-dd hh:mm:ss,SSS");
+            }
+            var end = new Date();
+            console.log(end.getTime() - start.getTime());
         }
 
+        testDate();
+
+        function testLog() {
+            var start = new Date();
+            for (var i = 0; i < 100; i++) {
+                log.fatal("fatal log", new Error("Error Message."));
+                log.error("error log", new Error("Error Message."));
+                log.warn("warn log", new Error("Error Message."));
+                log.info("info log", new Error("Error Message."));
+                log.debug("debug log", new Error("Error Message."));
+                log.trace("trace log", new Error("Error Message."));
+            }
+            var end = new Date();
+            console.log(end.getTime() - start.getTime());
+        }
         testLog();
     </script>
 </body>
